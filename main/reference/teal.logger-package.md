@@ -6,12 +6,11 @@ Logging Setup for the `teal` Family of Packages.
 
 Useful links:
 
-- <https://insightsengineering.github.io/teal.logger/>
+- <https://pharmaverse.github.io/teal.logger/>
 
-- <https://github.com/insightsengineering/teal.logger/>
+- <https://github.com/pharmaverse/teal.logger/>
 
-- Report bugs at
-  <https://github.com/insightsengineering/teal.logger/issues>
+- Report bugs at <https://github.com/pharmaverse/teal.logger/issues>
 
 ## Author
 

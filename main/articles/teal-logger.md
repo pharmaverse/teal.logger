@@ -14,7 +14,7 @@ refer to:
 ## Default Logging Setup of `teal.logger`
 
 `teal.logger` employs the
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md)
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)
 function to create a new logger in a user-defined namespace.
 `teal.logger` comes with a predefined pair of layout and logging level.
 Other packages in the `teal` framework utilize `teal.logger` to log
@@ -35,78 +35,62 @@ documentation](https://daroczig.github.io/logger/articles/customize_logger.html)
 ## Customizing the Log Level
 
 While utilizing
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md),
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md),
 the default logging level for the new logger is
 [`logger::INFO`](https://daroczig.github.io/logger/reference/log_levels.html).
 You can modify this behavior in four distinct ways:
 
 1.  Using the `logger` interface.
 
-``` r
-
-library(teal.logger)
-register_logger("my_namespace")
-logger::log_threshold(logger::TRACE, namespace = "my_namespace")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``)`\
+`logger``::`[`log_threshold`](https://daroczig.github.io/logger/reference/log_threshold.html)`(``logger``::`[`TRACE`](https://daroczig.github.io/logger/reference/log_levels.html)`, namespace ``=`` ``"my_namespace"``)`
 
 Customizing `teal`’s logging level:
 
-``` r
-
-library(teal.logger)
-logger::log_threshold(logger::TRACE, namespace = "teal")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+`logger``::`[`log_threshold`](https://daroczig.github.io/logger/reference/log_threshold.html)`(``logger``::`[`TRACE`](https://daroczig.github.io/logger/reference/log_levels.html)`, namespace ``=`` ``"teal"``)`
 
 2.  Utilizing the function argument of
-    [`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md).
+    [`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md).
 
-``` r
-
-library(teal.logger)
-register_logger("my_namespace", level = logger::TRACE)
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``, level ``=`` ``logger``::`[`TRACE`](https://daroczig.github.io/logger/reference/log_levels.html)`)`
 
 Customizing `teal`’s logging level:
 
-``` r
-
-library(teal.logger)
-register_logger(namespace = "teal", level = logger::TRACE)
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``namespace ``=`` ``"teal"``, level ``=`` ``logger``::`[`TRACE`](https://daroczig.github.io/logger/reference/log_levels.html)`)`
 
 3.  Setting an environment variable.
 
-``` r
-
-library(teal.logger)
-Sys.setenv(TEAL.LOG_LEVEL = "TRACE")
-register_logger("my_namespace")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LEVEL ``=`` ``"TRACE"``)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``)`
 
 Customizing `teal`’s logging level:
 
-``` r
-
-Sys.setenv(TEAL.LOG_LEVEL = "TRACE")
-library(teal.logger)
-```
+\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LEVEL ``=`` ``"TRACE"``)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`
 
 4.  Setting an `option`.
 
-``` r
-
-library(teal.logger)
-options(teal.log_level = logger::TRACE)
-register_logger("my_namespace")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`options`](https://rdrr.io/r/base/options.html)`(``teal.log_level ``=`` ``logger``::`[`TRACE`](https://daroczig.github.io/logger/reference/log_levels.html)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``)`
 
 Customizing `teal`’s logging level:
 
-``` r
-
-options(teal.log_level = logger::TRACE)
-library(teal.logger)
-```
+\
+[`options`](https://rdrr.io/r/base/options.html)`(``teal.log_level ``=`` ``logger``::`[`TRACE`](https://daroczig.github.io/logger/reference/log_levels.html)`)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`
 
 Do keep in mind that packages in the `teal` framework register their
 loggers upon library loading. Therefore, if you intend to alter the
@@ -115,113 +99,91 @@ ensure you modify the variable before loading the library.
 
 Example below:
 
-``` r
+\
+`# library(teal)`\
+`# Sys.setenv(TEAL.LOG_LEVEL = "TRACE") # won't change the default`
 
-# library(teal)
-# Sys.setenv(TEAL.LOG_LEVEL = "TRACE") # won't change the default
-```
-
-``` r
-
-# Sys.setenv(TEAL.LOG_LEVEL = "TRACE")
-# library(teal)
-# will change the default because teal is attached after changing the variable
-```
+\
+`# Sys.setenv(TEAL.LOG_LEVEL = "TRACE")`\
+`# library(teal)`\
+`# will change the default because teal is attached after changing the variable`
 
 Alternatively, you can change the options after loading a package and
 then call
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md)
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)
 with the appropriate namespace name to change the default of a single
 package. E.g. this will change the defaults of `teal.logger`. Replace
 `teal.logger` with the name of the package you want to change.
 
-``` r
-
-library(teal.logger)
-Sys.setenv(TEAL.LOG_LEVEL = "TRACE")
-register_logger('teal.logger')
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LEVEL ``=`` ``"TRACE"``)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``'teal.logger'``)`
 
 For a more comprehensive understanding, consult the [`logger`
 documentation](https://daroczig.github.io/logger/articles/customize_logger.html)
 and the documentation for
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md).
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md).
 
 ## Customizing the Log Layout
 
 When using
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md),
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md),
 the default log layout for the new logger is
 `[{level}] {format(time, \"%Y-%m-%d %H:%M:%OS4\")} pid:{pid} token:[{token}] {ans} {msg}`.You
 can modify this behavior in four distinct ways:
 
 1.  Using the `logger` interface.
 
-``` r
-
-library(teal.logger)
-register_logger("my_namespace")
-logger::log_layout("{level} {msg}", namespace = "my_namespace")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``)`\
+`logger``::`[`log_layout`](https://daroczig.github.io/logger/reference/log_layout.html)`(``"{level} {msg}"``, namespace ``=`` ``"my_namespace"``)`
 
 Customizing `teal`’s logging layout:
 
-``` r
-
-library(teal.logger)
-logger::log_layout("{level} {msg}", namespace = "teal")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+`logger``::`[`log_layout`](https://daroczig.github.io/logger/reference/log_layout.html)`(``"{level} {msg}"``, namespace ``=`` ``"teal"``)`
 
 2.  Utilizing the function argument of
-    [`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md).
+    [`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md).
 
-``` r
-
-library(teal.logger)
-register_logger("my_namespace", layout = "{level} {msg}")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``, layout ``=`` ``"{level} {msg}"``)`
 
 Customizing `teal`’s logging layout:
 
-``` r
-
-library(teal.logger)
-register_logger(namespace = "teal", layout = "{level} {msg}")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``namespace ``=`` ``"teal"``, layout ``=`` ``"{level} {msg}"``)`
 
 3.  Setting an environment variable.
 
-``` r
-
-library(teal.logger)
-Sys.setenv(TEAL.LOG_LAYOUT = "{level} {msg}")
-register_logger("my_namespace")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LAYOUT ``=`` ``"{level} {msg}"``)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``)`
 
 Customizing `teal`’s logging layout:
 
-``` r
-
-Sys.setenv(TEAL.LOG_LAYOUT = "{level} {msg}")
-library(teal.logger)
-```
+\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LAYOUT ``=`` ``"{level} {msg}"``)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`
 
 4.  Setting an `option`.
 
-``` r
-
-library(teal.logger)
-options(teal.log_layout = "{level} {msg}")
-register_logger("my_namespace")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`options`](https://rdrr.io/r/base/options.html)`(``teal.log_layout ``=`` ``"{level} {msg}"``)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``"my_namespace"``)`
 
 Customizing `teal`’s logging layout:
 
-``` r
-
-options(teal.log_layout = "{level} {msg}")
-library(teal.logger)
-```
+\
+[`options`](https://rdrr.io/r/base/options.html)`(``teal.log_layout ``=`` ``"{level} {msg}"``)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`
 
 Like changing the log level, remember that `teal` registers its logger
 during library loading. Thus, if you aim to modify the default logging
@@ -230,37 +192,31 @@ the variable prior to loading the library.
 
 Example below:
 
-``` r
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LAYOUT ``=`` ``"{level} {msg}"``)`` ``# won't change the default`
 
-library(teal.logger)
-Sys.setenv(TEAL.LOG_LAYOUT = "{level} {msg}") # won't change the default
-```
-
-``` r
-
-Sys.setenv(TEAL.LOG_LAYOUT = "{level} {msg}")
-library(teal.logger)
-# will change the default because teal is attached after changing the variable
-```
+\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LAYOUT ``=`` ``"{level} {msg}"``)`\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+`# will change the default because teal is attached after changing the variable`
 
 Alternatively, you can change the options after loading a package and
 then call
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md)
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)
 with the appropriate namespace name to change the default of a single
 package. E.g. this will change the defaults of `teal.logger`. Replace
 `teal.logger` with the name of the package you want to change.
 
-``` r
-
-library(teal.logger)
-Sys.setenv(TEAL.LOG_LAYOUT = "{level} {msg}")
-register_logger('teal.logger')
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`Sys.setenv`](https://rdrr.io/r/base/Sys.setenv.html)`(``TEAL.LOG_LAYOUT ``=`` ``"{level} {msg}"``)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``'teal.logger'``)`
 
 For additional insights, consult the [`logger`
 documentation](https://daroczig.github.io/logger/articles/customize_logger.html)
 and the documentation for
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md).
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md).
 
 ## Customizing the Log Destination
 
@@ -271,16 +227,14 @@ API](https://daroczig.github.io/logger/articles/customize_logger.html#delivering
 For instance, to redirect `teal`’s logs to `stderr` using `logger`’s
 API:
 
-``` r
-
-library(teal.logger)
-logger::log_appender(logger::appender_stderr, namespace = "teal")
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+`logger``::`[`log_appender`](https://daroczig.github.io/logger/reference/log_appender.html)`(``logger``::`[`appender_stderr`](https://daroczig.github.io/logger/reference/appender_console.html)`, namespace ``=`` ``"teal"``)`
 
 ## Logging in Other `teal.X` Packages
 
 Additional `teal.X` packages, such as `teal.data`, employ
-[`register_logger()`](https://insightsengineering.github.io/teal.logger/reference/register_logger.md)
+[`register_logger()`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)
 to enroll loggers in their namespace. Each package establishes a logger
 in the namespace equivalent to the package name, e.g., `teal.data`
 creates a logger in the `teal.data` namespace. A package initializes its
@@ -294,15 +248,13 @@ Below is a minimal working example that demonstrates logging using
 implying that logs with a level above `level = 400` won’t appear in
 `stdout`.
 
-``` r
-
-library(teal.logger)
-register_logger(namespace = "my_module")
-
-logger::log_error("This is an ERROR level log from my module", namespace = "my_module") # 200
-logger::log_warn("This is a WARN level log from my module", namespace = "my_module") # 300
-logger::log_success("This is a SUCCESS level log from my module", namespace = "my_module") # 350
-logger::log_info("This is an INFO level log from my module", namespace = "my_module") # 400
-logger::log_debug("This is a DEBUG level log from my module", namespace = "my_module") # 500
-logger::log_trace("This is a TRACE level log from my module", namespace = "my_module") # 600
-```
+\
+[`library`](https://rdrr.io/r/base/library.html)`(`[`teal.logger`](https://pharmaverse.github.io/teal.logger/)`)`\
+[`register_logger`](https://pharmaverse.github.io/teal.logger/reference/register_logger.md)`(``namespace ``=`` ``"my_module"``)`\
+\
+`logger``::`[`log_error`](https://daroczig.github.io/logger/reference/log_level.html)`(``"This is an ERROR level log from my module"``, namespace ``=`` ``"my_module"``)`` ``# 200`\
+`logger``::`[`log_warn`](https://daroczig.github.io/logger/reference/log_level.html)`(``"This is a WARN level log from my module"``, namespace ``=`` ``"my_module"``)`` ``# 300`\
+`logger``::`[`log_success`](https://daroczig.github.io/logger/reference/log_level.html)`(``"This is a SUCCESS level log from my module"``, namespace ``=`` ``"my_module"``)`` ``# 350`\
+`logger``::`[`log_info`](https://daroczig.github.io/logger/reference/log_level.html)`(``"This is an INFO level log from my module"``, namespace ``=`` ``"my_module"``)`` ``# 400`\
+`logger``::`[`log_debug`](https://daroczig.github.io/logger/reference/log_level.html)`(``"This is a DEBUG level log from my module"``, namespace ``=`` ``"my_module"``)`` ``# 500`\
+`logger``::`[`log_trace`](https://daroczig.github.io/logger/reference/log_level.html)`(``"This is a TRACE level log from my module"``, namespace ``=`` ``"my_module"``)`` ``# 600`

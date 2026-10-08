@@ -1,6 +1,9 @@
 # Changelog
 
-## teal.logger 0.4.2.9000
+## teal.logger 0.4.2.9001
+
+- Add `AGENTS.md` and `CLAUDE.md`
+  ([\#126](https://github.com/pharmaverse/teal.logger/issues/126)).
 
 ## teal.logger 0.4.2
 
@@ -14,7 +17,7 @@ CRAN release: 2026-06-29
 CRAN release: 2025-12-02
 
 - Improved unit test and increased code coverage
-  ([\#116](https://github.com/insightsengineering/teal.logger/issues/116)).
+  ([\#116](https://github.com/pharmaverse/teal.logger/issues/116)).
 - Removed `lifecycle` dependency.
 
 ## teal.logger 0.4.0
@@ -29,7 +32,7 @@ CRAN release: 2025-02-14
 
 - Fixed a `glue` formatting issues when capturing errors, warnings or
   messages
-  ([\#101](https://github.com/insightsengineering/teal.logger/issues/101)).
+  ([\#101](https://github.com/pharmaverse/teal.logger/issues/101)).
 
 ## teal.logger 0.3.1
 
