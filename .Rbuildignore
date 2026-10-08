@@ -44,3 +44,5 @@ coverage.*
 ^pkgdown$
 ^.revdeprefs\.yaml$
 ^revdep$
+^AGENTS\.md$
+^CLAUDE\.md$

@@ -1,0 +1,67 @@
+---
+# This file generates AGENTS.md in the package root.
+# It is not part of the package build or the pkgdown site.
+# To regenerate it, run from the package root:
+#   rmarkdown::render("vignettes/_AGENTS.Rmd", output_file = file.path("AGENTS.md"), output_dir = ".")
+output:
+  github_document:
+    html_preview: false
+params:
+  url: "https://raw.githubusercontent.com/insightsengineering/teal/refs/heads/main/SHARED_AGENTS.md"
+---
+# teal.logger R Package Development Guide
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Package Overview
+
+`teal.logger` is part of the `teal` framework and provides functions to log changes on teal apps.
+
+It provides 4 functions:
+
+- `register_handlers()` and `register_logger()`: Register handlers and loggers as `logger`.
+- `log_shiny_input_changes()` and `log_system_info()`: Logs input values and the system information.
+- `suppress_logs()` Suppress logs mainly for tests.
+
+For details about teal.logger configuration check `vignettes/teal-logger.Rmd`
+
+## Development Context
+
+The main feature of this package is to provide `teal` apps with functionality to log the state.
+
+### Relationships with other packages
+
+Direct dependencies:
+
+- `logger`: Extends the logger package with some custom settings.
+
+Usage in other framework packages:
+
+- It is used on `teal`, `teal.modules.clinical`, `teal.modules.general`, `teal.picks`, `teal.slice`, `teal.transform` and other module packages
+
+
+```{r teal_content, echo=FALSE, results='asis'}
+# Append common shared instructions from teal framework
+common_agents_url <- params$url
+common_agents_path <- tempfile()
+download.file(url = common_agents_url, destfile = common_agents_path, quiet = TRUE)
+common_agents_shared <- readLines(common_agents_path)
+# remove section intended only for module packages
+remove_sections <- c("<!-- (Begins|Ends) Module Section")
+Reduce(
+  function(x, y) {
+    delim <- grep(y, x)
+    if (length(delim) == 0) {
+      return(x)
+    } else if (length(delim) != 2) {
+      stop("Section delimiters are not balanced")
+    }
+    x[-1 * seq(from = delim[1], to = delim[2])]
+  },
+  remove_sections,
+  init = common_agents_shared
+) |>
+  cat(sep = "\n")
+```

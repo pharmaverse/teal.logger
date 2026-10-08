@@ -1,5 +1,7 @@
 # teal.logger 0.4.2.9001
 
+* Add `AGENTS.md` and `CLAUDE.md` (#126).
+
 # teal.logger 0.4.2
 
 * Fix in vignette.
