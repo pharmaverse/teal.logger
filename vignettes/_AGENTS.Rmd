@@ -25,6 +25,8 @@ It provides 4 functions:
 - `log_shiny_input_changes()` and `log_system_info()`: Logs input values and the system information.
 - `suppress_logs()` Suppress logs mainly for tests.
 
+For details about teal.logger configuration check `vignettes/teal-logger.Rmd`
+
 ## Development Context
 
 The main feature of this package is to provide `teal` apps with functionality to log the state.
