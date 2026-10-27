@@ -7,7 +7,8 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-9533-457X")),
     person("Dony", "Unardi", , "unardid@gene.com", role = c("rev", "cre")),
     person("Konrad", "Pagacz", role = "aut"),
-    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd"))
+    person("F. Hoffmann-La Roche AG", role = c("cph", "fnd")),
+    person("Appsilon Sp. z o.o.", email = "teal@appsilon.com", role = c("cph", "fnd"))
   )
 Description: Utilizing the 'logger' framework to record events within a
     package, specific to 'teal' family of packages.  Supports logging

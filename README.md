@@ -27,6 +27,8 @@
 
 `teal.logger` is an `R` package providing a unified setup for generating logs using the `logger` package.
 
+teal.logger is developed by [Roche](https://roche.com), [Appsilon](https://www.appsilon.com), and the wider open-source community. [Roche](https://roche.com) and [Appsilon](https://www.appsilon.com) are copyright holders of the project, which is hosted in the [pharmaverse](https://pharmaverse.org) GitHub organisation.
+
 ## Installation
 
 ```r
@@ -67,3 +69,7 @@ logger::log_error("Hello from namespace2", namespace = "namespace2")
 ## Getting help
 
 If you encounter a bug or you have a feature request - please file an issue. For questions, discussions and staying up to date, please use the "teal" channel in the [`pharmaverse` slack workspace](https://pharmaverse.slack.com).
+
+## Acknowledgment
+
+teal.logger was created at [Roche](https://roche.com) and is developed together with [Appsilon](https://www.appsilon.com) and the wider open-source community. Thank you to everyone who has contributed code, reported an issue, improved the documentation, or built a module. To get involved, explore the [open issues](https://github.com/pharmaverse/teal.logger/issues) or join the #teal channel in the [pharmaverse Slack](https://pharmaverse.slack.com/).

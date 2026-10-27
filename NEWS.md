@@ -1,6 +1,10 @@
 # teal.logger 0.4.2.9001
 
+### Miscellaneous
+
 * Add `AGENTS.md` and `CLAUDE.md` (#126).
+* teal.logger has moved to the pharmaverse GitHub organisation: https://github.com/pharmaverse/teal.logger.
+* Appsilon becomes a core contributor and joins F. Hoffmann-La Roche AG as a copyright holder of teal.logger, working alongside the wider contributor community.
 
 # teal.logger 0.4.2
 

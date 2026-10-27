@@ -29,6 +29,7 @@ Authors:
 Other contributors:
 \itemize{
   \item F. Hoffmann-La Roche AG [copyright holder, funder]
+  \item Appsilon Sp. z o.o. \email{teal@appsilon.com} [copyright holder, funder]
 }
 
 }
